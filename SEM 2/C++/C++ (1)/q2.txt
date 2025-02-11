@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+#define MAX 100
+
+class Queue{
+    private:
+    int front, rear;
+    int items[MAX];
+    
+    public:
+    Queue(){
+        front = 0;
+        rear = -1;
+    }
+    bool isEmpty(){
+        return front > rear;
+    }
+    bool isFull(){
+        return rear == MAX - 1;
+    }
+    
+    void enqueue(int value){
+        if (isFull()){
+            cout << "Queue overflow cannot enqueue" << "\n";
+            return;
+        }
+        items [++rear] = value;
+        cout << value;
+    }
+        int dequeue(){
+            if (isEmpty()){
+                cout << "Queue underflow cannot dequeue" << "\n";
+                return -1;
+            }
+            return items [front++];
+        }
+        
+        int peek(){
+            if (isEmpty()){
+                cout <<"Queue is empty" << "\n";
+                return -1;
+            }
+            return items[front];
+        }
+        
+        void display(){
+            if(isEmpty()){
+                cout << "Queue is empty" << "\n";
+                return;
+            }
+            cout << "Elements of queue: " << "\n";
+            for (int i = front; i <= rear; i++){
+                cout << items[i] << " ";
+            }
+            cout << "\n";
+    }
+};
+int main() {
+    Queue q;
+    q.enqueue(10);
+    cout << "\n";
+    q.enqueue(20);
+    cout << "\n";
+    q.enqueue(30);
+    cout << "\n";
+    q.display();
+    
+    cout << "Dequeued: " << q.dequeue() << "\n";
+    cout << "Front element: " << q.peek() << "\n";
+    cout << "Is Queue empty? (1 -- True, 0 -- False): " << " " << q.isEmpty() << "\n";
+    cout << "Is Queue full? (1 -- True, 0 -- False): " << " " << q.isFull() << "\n";
+
+    return 0;
+}
