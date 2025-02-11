@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+class WeatherStation{
+    
+    private:
+    
+    int stationID;
+    double temperature;
+    double humidity;
+    double pressure;
+    
+       double defaultTemperature = 20.0;
+       double defaultHumidity = 50.0;
+       double defaultPressure = 1013.25;
+    
+    void validateData(){
+        
+     if (temperature < -50 || temperature > 50) {  
+            cout << "Temperature out of range! Setting to default (" << defaultTemperature << "°C).\n";  
+            temperature = defaultTemperature;  
+        }  
+
+        // Validate humidity  
+        if (humidity < 0 || humidity > 100) {  
+            cout << "Humidity out of range! Setting to default (" << defaultHumidity << "%).\n";  
+            humidity = defaultHumidity;  
+        }  
+
+        // Validate pressure  
+        if (pressure < 300 || pressure > 1100) {  
+            cout << "Pressure out of range! Setting to default (" << defaultPressure << " hPa).\n";  
+            pressure = defaultPressure;  
+        }  
+    }
+    public:
+    
+    WeatherStation(int _stationID, double _temperature, double _humidity, double _pressure){
+        stationID = _stationID;
+        temperature = _temperature;
+        humidity = _humidity;
+        pressure = _pressure;
+        validateData();
+    }
+    void displayData(){
+        cout << "StationID: " << stationID << "\n";
+        cout << "Temperature: " << temperature << "\n";
+        cout << "Humidity: " << humidity << "\n";
+        cout << "Pressure: " << pressure << "\n";
+    }
+};
+int main(){
+
+    int _stationID;
+    double _temperature, _humidity, _pressure;
+    
+    cout << "Enter the Station ID: ";
+    cin >> _stationID;
+    cout << "Enter the Temperature: ";
+    cin >> _temperature;
+    cout << "Enter the Humidity: ";
+    cin >> _humidity;
+    cout << "Enter the Pressure: ";
+    cin >> _pressure;
+    cout << "\n";
+    cout << "Values of parameterized constructor " << "\n\n";
+
+    WeatherStation s2(_stationID, _temperature, _humidity, _pressure);
+    s2.displayData();
+    
+    return 0;
+}

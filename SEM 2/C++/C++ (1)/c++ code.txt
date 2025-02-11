@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+class Book{
+    private:
+    string title;
+    string author;
+    string edition;
+    int pages;
+    float price;
+    
+    public:
+    Book(string _title,string _author,string _edition,int _pages,float _price){
+        title=_title;
+        author=_author;
+        edition=_edition;
+        pages=_pages;
+        price=_price;
+    }
+};
+int main() {
+    // Write C++ code here
+    std::cout << "Try programiz.pro";
+
+    return 0;
+}

@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+class BankAccount{
+    private:
+    string accholder;
+    string accnumber;
+    float balance;
+    
+    public:
+    BankAccount(string _accholder,string _accnumber,float _balance){
+        accholder=_accholder;
+        accnumber=_accnumber;
+        balance=_balance;
+    }
+    void Deposit_money(float money){
+        balance+=money;
+        cout<<"Deposited ₹"<<money<<" into the account.";
+    }
+    void Withdraw_money(float money){
+        if(money>balance){
+            cout<<"Insufficient balance or invalid withdrawal amount.";
+        }
+        else{
+        balance-=money;
+        cout<<"Withdrawn ₹"<<money<<" from the account.";
+        }
+    }
+    void Display_Current_Balance(){
+        cout<<"Current Balance:"<<balance;
+    }
+    void Display_Details(){
+        cout<<"Account Holder: "<<accholder;
+        cout<<"\n";
+        cout<<"Account Number: "<<accnumber;
+        cout<<"\n";
+        cout<<"Current Balance: ₹"<<balance;
+        cout<<"\n";
+    }
+};
+int main(){
+    string _accholder;
+    string _accnumber;
+    float _balance;
+    float dmoney;
+    float wmoney;
+    float w2money;
+    cin>>_accholder;
+    
+    cin>>_accnumber;
+    cin>>_balance;
+
+    BankAccount b(_accholder,_accnumber,_balance);
+    b.Display_Details();
+    cin>>dmoney;
+    b.Deposit_money(dmoney);
+    cout<<"\n";
+    
+    cin>>wmoney;
+    b.Withdraw_money(wmoney);
+    cout<<"\n";
+    cin>>w2money;
+    
+    b.Withdraw_money(w2money);
+    cout<<"\n";
+    b.Display_Details();
+    
+    return 0;
+}

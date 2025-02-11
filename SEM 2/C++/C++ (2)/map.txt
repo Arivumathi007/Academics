@@ -1,0 +1,32 @@
+#include <iostream>
+#include <map>
+
+int main() {
+    std::map<int, std::string> myMap = {{1, "Adarsh R K"}, {2, "Adithya N S"}, {3, "Agilprasanna P"}};
+
+    // Insert a key-value pair
+    myMap[4] = "Aishwarya S";
+    myMap[33] = "Krishnamoorthi P L";
+    myMap[42] = "N Meera";
+
+    // Iterate over the map
+    for (const auto &pair : myMap)
+        std::cout << pair.first << ": " << pair.second << "\n";
+    // Output:
+    // 1: One
+    // 2: Two
+    // 3: Three
+    // 4: Four
+    
+      // Use find() to search for the key
+    auto it = myMap.find(66);
+
+    // Check if the key is found
+    if (it != myMap.end()) {
+        std::cout << "Key 66 found with value: " << it->second << "\n";
+    } else {
+        std::cout << "Key 66 not found in the map.\n";
+    }
+
+    return 0;
+}

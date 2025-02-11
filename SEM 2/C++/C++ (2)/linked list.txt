@@ -1,0 +1,46 @@
+#include <iostream>
+#include <list>
+
+int main() {
+    // Create a list of integers
+    std::list<int> myList;
+
+    // Add elements to the list
+    myList.push_back(10);  // Add 10 to the back
+    myList.push_back(20);  // Add 20 to the back
+    myList.push_front(5);  // Add 5 to the front
+
+    // Iterate over the list and display elements
+    std::cout << "Elements in the list: ";
+    for (const int &elem : myList) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
+
+    // Remove elements
+    myList.pop_front();  // Remove the first element
+    myList.pop_back();   // Remove the last element
+
+    // Display the list after removing elements
+    std::cout << "Elements after removing front and back: ";
+    for (const int &elem : myList) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
+
+    // Check size of the list
+    std::cout << "Size of the list: " << myList.size() << std::endl;
+
+    // Insert an element at a specific position
+    auto it = myList.begin();
+    myList.insert(it, 15);  // Insert 15 at the beginning
+
+    // Display the list after insertion
+    std::cout << "List after insertion: ";
+    for (const int &elem : myList) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}

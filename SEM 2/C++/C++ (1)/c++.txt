@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+class Book{
+    private:
+    string title;
+    string author;
+    double price;
+    string isbn;
+    bool ValidateIsbn(string _isbn){
+        long int isbn_sum=0;
+        int j=10;
+        for(int i=0;i<11;i++){
+            int num=(int) _isbn[i];              
+            isbn_sum+=num*j;
+            j--;
+        }
+        if((isbn_sum%11)==0)
+        {
+            cout << "Valid" << "\n";
+            return true;
+        }
+        else
+        {
+            cout << "Invalid" << "\n";
+            return false;
+        }
+}
+    public:
+    Book(string _title, string _author, double _price, string _isbn){
+        if(ValidateIsbn(_isbn)){
+        title = _title;
+        author = _author;
+        price = _price;
+        isbn = _isbn;
+    }
+}
+    void displayInfo(){
+        cout << "Title name: " << title << "\n";
+        cout << "Author name: " << author << "\n";
+        cout << "Price: " << price << "\n";
+        cout << "ISBN Number: " << isbn << "\n";
+    }
+};
+int main() {
+    string _title, _author, _isbn;
+    double _price;
+    
+    cout << "Enter the title of the book: ";
+    cin >> _title;
+    cout << "Enter the author of the book: ";
+    cin >> _author;
+    cout << "Enter the price of the book: ";
+    cin >> _price;
+    cout << "Enter the ISBN of the book: ";
+    cin >> _isbn;
+    
+    Book s(_title, _author, _price, _isbn);
+    s.displayInfo();
+    
+    return 0;
+}

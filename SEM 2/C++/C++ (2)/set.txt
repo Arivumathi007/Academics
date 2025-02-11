@@ -1,0 +1,29 @@
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<int> mySet = {24, 5, 10, 2};
+
+    // Insert element
+    mySet.insert(18);
+    mySet.insert(44);
+    mySet.insert(24); //Duplicate Element
+    
+    //Erase element
+    mySet.erase(5);
+
+    // Iterate over the set
+    for (const int &elem : mySet)
+        std::cout << elem << " "; // Output: 2 3 4 5 6 8
+        
+    auto it = mySet.find(44);
+
+    // Check if the element is found
+    if (it != mySet.end()) {
+        std::cout << "\nElement 44 found in the set.\n";
+    } else {
+        std::cout << "\nElement 44 not found in the set.\n";
+    }
+
+    return 0;
+}
