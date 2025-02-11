@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Full-Screen Color Grid</title>  
+    <!-- Bootstrap CSS -->  
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">  
+    <style>  
+        body, html {  
+            height: 100%;  
+            margin: 0;  
+            padding: 0;  
+        }  
+        .container-fluid {  
+            height: 100vh; /* Make the container take full viewport height */  
+            display: flex;  
+            flex-direction: column;  
+            padding: 0; /* Ensure there's no padding on the container */  
+            margin: 0; /* Ensure there's no margin on the container */  
+        }  
+        .row {  
+            flex: 1; /* Make rows grow to fill the space equally */  
+            margin: 0; /* Remove margin between rows */  
+        }  
+        .box {  
+            height: 100%; /* Each box takes up the full height of its row */  
+            margin: 0; /* Remove margin inside boxes */  
+        }  
+        .red { background-color: red; }  
+        .blue { background-color: blue; }  
+        .green { background-color: green; }  
+        .yellow { background-color: yellow; }  
+    </style>  
+</head>  
+<body>  
+    <div class="container-fluid">  
+        <div class="row">  
+            <!-- Red Box -->  
+            <div class="col-md-6 col-12 p-0">  
+                <div class="box red"></div>  
+            </div>  
+            <!-- Blue Box -->  
+            <div class="col-md-6 col-12 p-0">  
+                <div class="box blue"></div>  
+            </div>  
+        </div>  
+
+        <div class="row">  
+            <!-- Green Box -->  
+            <div class="col-md-6 col-12 p-0">  
+                <div class="box green"></div>  
+            </div>  
+            <!-- Red Box (repeated) -->  
+            <div class="col-md-6 col-12 p-0">  
+                <div class="box red"></div>  
+            </div>  
+        </div>  
+
+        <div class="row">  
+            <!-- Yellow Box -->  
+            <div class="col-12 p-0">  
+                <div class="box yellow"></div>  
+            </div>  
+        </div>  
+    </div>  
+
+    <!-- Bootstrap JS and dependencies -->  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+</body>  
+</html>

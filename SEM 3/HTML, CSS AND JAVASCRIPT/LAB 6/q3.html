@@ -1,0 +1,82 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>String Calculator</title>  
+    <link rel="stylesheet" href="styles.css">  
+    <style>
+        body {  
+    font-family: Arial, sans-serif;  
+    background: linear-gradient(to right, #ff7e5f, #feb47b);  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+}  
+
+.container {  
+    background-color: white;  
+    padding: 20px;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+    text-align: center;  
+}  
+
+input, button {  
+    margin: 10px 0;  
+    padding: 10px;  
+    border-radius: 5px;  
+    border: 1px solid #ccc;  
+}  
+
+button {  
+    background-color: #ff7e5f;  
+    color: white;  
+    cursor: pointer;  
+}  
+
+button:hover {  
+    background-color: #feb47b;  
+}
+    </style>
+</head>  
+<body>  
+    <div class="container">  
+        <h1>String Calculator</h1>  
+        <input type="text" id="inputString" placeholder="Enter a string" />  
+        <button id="findBtn">Find</button>  
+        <h2>Shortest string is: <span id="shortestWord"></span></h2>  
+        <h2>Longest string is: <span id="longestWord"></span></h2>  
+    </div> 
+    <script>
+        document.getElementById('findBtn').addEventListener('click', function() {  
+    const inputString = document.getElementById('inputString').value;  
+    const words = inputString.split(' ');  
+
+    if (words.length === 0) {  
+        document.getElementById('shortestWord').innerText = 'N/A';  
+        document.getElementById('longestWord').innerText = 'N/A';  
+        return;  
+    }  
+
+    let shortestWord = words[0];  
+    let longestWord = words[0];  
+
+    for (let word of words) {  
+        if (word.length < shortestWord.length) {  
+            shortestWord = word;  
+        }  
+        if (word.length > longestWord.length) {  
+            longestWord = word;  
+        }  
+    }  
+
+    document.getElementById('shortestWord').innerText = shortestWord;  
+    document.getElementById('longestWord').innerText = longestWord;  
+});
+    </script> 
+    <script src="script.js"></script>  
+</body>  
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Event</title>
+    <style>
+        /* Style for the box */
+        #myBox {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The element to listen for a double-click event -->
+    <div id="myBox">Double Click Me!</div>
+
+    <script>
+        // Get the element by its ID
+        const box = document.getElementById('myBox');
+
+        // Add a double-click event listener to the element
+        box.addEventListener('dblclick', function() {
+            // Perform an action on double-click, e.g., change the text
+            box.textContent = 'You double-clicked me!';
+            box.style.backgroundColor = 'lightgreen'; // Change background color as an additional action
+        });
+    </script>
+
+</body>
+</html>

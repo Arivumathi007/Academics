@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMBER ARRAY</title>
+    <script>
+        
+        function numberToArray(num) {
+            return Array.from(String(num), Number);
+        }
+
+        
+        function runExamples() {
+            
+            document.getElementById("array-result").innerText = numberToArray(12345);
+            
+        }
+    </script>
+</head>
+<body onload="runExamples()">
+    
+    <h2>3. Convert Number to Array of Digits (12345)</h2>
+    <h2><p id="array-result"></p></h2>
+
+    
+</body>
+</html>

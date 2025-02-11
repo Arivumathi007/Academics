@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Event</title>
+    <style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding-top: 50px;
+    }
+</style>
+</head>
+<body>
+    <!-- Button Element -->
+    <button id="myButton">Click Me</button>
+
+    <!-- A paragraph to display the message -->
+    <p id="message"></p>
+
+    <script>
+        // Get the button and paragraph elements by their IDs
+        const button = document.getElementById('myButton');
+        const messageParagraph = document.getElementById('message');
+
+        // Add a click event listener to the button
+        button.addEventListener('click', function() {
+            // Display the message in the paragraph instead of logging it to the console
+            messageParagraph.textContent = 'Button was clicked!';
+        });
+    </script>
+</body>
+</html>

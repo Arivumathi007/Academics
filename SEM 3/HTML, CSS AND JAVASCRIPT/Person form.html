@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Person Form</h2>
+
+                <div class="alert alert-danger" role="alert">  
+                    Error Messages.  
+                    <button type="button" class="close" onclick="this.parentElement.style.display='none';">  
+                        <span>&times;</span>  
+                    </button>  
+                </div>  
+                <!-- Form Start -->
+                <form>
+                    <div class="form-row">
+                        <!-- Title -->
+                        <div class="form-group col-md-2">
+                            <label for="title">Title</label>
+                            <select id="title" class="form-control">
+                                <option>Mr.</option>
+                                <option>Ms.</option>
+                                <option>Mrs.</option>
+                            </select>
+                        </div>
+                        <!-- First Name -->
+                        <div class="form-group col-md-5">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" value="Chee Kin">
+                        </div>
+                        <!-- Last Name -->
+                        <div class="form-group col-md-5">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" value="Lim">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- Gender -->
+                        <div class="form-group col-md-6">
+                            <label for="gender">Gender</label>
+                            <select id="gender" class="form-control">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <!-- Date of Birth -->
+                        <div class="form-group col-md-6">
+                            <label for="dob">Date of Birth</label>
+                            <input type="text" class="form-control" id="dob" placeholder="dd/mm/yyyy">
+                        </div>
+                    </div>
+
+                    <!-- Address Section -->
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Street">
+                    </div>
+
+                    <div class="form-row">
+                        <!-- City -->
+                        <div class="form-group col-md-4">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <!-- State -->
+                        <div class="form-group col-md-4">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state">
+                        </div>
+                        <!-- Country -->
+                        <div class="form-group col-md-4">
+                            <label for="country">Country</label>
+                            <select id="country" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Malaysia</option>
+                                <option>Singapore</option>
+                                <option>India</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- Postal Code -->
+                        <div class="form-group col-md-6">
+                            <label for="postcode">Post Code</label>
+                            <input type="text" class="form-control" id="postcode">
+                        </div>
+                    </div>
+
+                    <!-- Register Button -->
+                    <button type="submit" class="btn btn-primary btn-lg float-end" style="float: right;">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

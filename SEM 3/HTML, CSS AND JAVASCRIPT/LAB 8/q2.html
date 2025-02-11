@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Object Comparison</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 20px;  
+        }  
+        textarea {  
+            width: 100%;  
+            height: 100px;  
+            margin-top: 10px;  
+        }  
+        button {  
+            padding: 5px 10px;  
+            margin-top: 10px;  
+        }  
+        .result {  
+            margin-top: 20px;  
+            font-weight: bold;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <h1>Compare Two Objects</h1>  
+    <label for="objectA">Object A (JSON format):</label>  
+    <textarea id="objectA"></textarea>  
+    
+    <label for="objectB">Object B (JSON format):</label>  
+    <textarea id="objectB"></textarea>  
+    
+    <button onclick="compare()">Compare Objects</button>  
+    <div class="result" id="resultDisplay"></div>  
+
+    <script>  
+        function compareObjects(obj1, obj2) {  
+            // Iterate through all properties of the second object  
+            for (const key in obj2) {  
+                // Check if the property exists in the first object  
+                if (!obj1.hasOwnProperty(key)) {  
+                    return false; // If not, return false  
+                }  
+
+                // Check if values are equal  
+                // This also considers nested objects  
+                if (typeof obj2[key] === 'object' && obj2[key] !== null) {  
+                    // If both are objects, do a deep comparison  
+                    if (!compareObjects(obj1[key], obj2[key])) {  
+                        return false;  
+                    }  
+                } else {  
+                    if (obj1[key] !== obj2[key]) {  
+                        return false; // If values are not equal, return false  
+                    }  
+                }  
+            }  
+
+            return true; // If all properties match, return true  
+        }  
+
+        function compare() {  
+            try {  
+                const objA = JSON.parse(document.getElementById('objectA').value);  
+                const objB = JSON.parse(document.getElementById('objectB').value);  
+                const result = compareObjects(objA, objB);  
+                document.getElementById('resultDisplay').innerText = `Objects are ${result ? 'equal' : 'not equal'}.`;  
+            } catch (error) {  
+                document.getElementById('resultDisplay').innerText = 'Invalid JSON format. Please correct it.';  
+            }  
+        }  
+    </script>  
+</body>  
+</html>

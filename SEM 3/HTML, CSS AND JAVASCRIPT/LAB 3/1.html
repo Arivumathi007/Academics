@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            body{
+                margin-left: 500px;
+                display: inline-block;
+                padding: 50px;
+                border-radius:50px;
+            }
+        </style>
+        <form style="background-color: rgb(199, 253, 5);">
+            <fieldset style="p.one {
+                border-style: solid;
+                border-width: 10px;
+                border-color: rgb(255, 0, 0);
+                };">
+
+            <h1 align="center"> 
+                <p style="color:red;">Personal Details </p>
+             </h1>
+            
+            <label for="fname">Name:</label>
+            <input type="text" id="fname" name="fname">
+            <br>  </br>  
+
+            <label for="password">Password:</label>
+            <input type="text" id="password  " name="password">
+            <br>  </br>
+
+            <label for="email"> E-mail ID: </label>
+            <input type="text" id="email" name="email">
+            <br>  </br>
+
+            <label for="gender"> Gender: </label>
+            <input type="radio" id="male" value="male">
+            <label for="male"> male </label> 
+            <input type="radio" id="Female" name="Gender" value="Female">
+            <label for="female">Female</label>
+
+            <br>   </br>
+            <label for="contact"> Contact: </label>
+            <input type="text" id="contact" name="contact">
+            <br>  </br>
+
+            <h1 align="center"> 
+                <p style="color:red;">Educational Qualifications</p>
+             </h1>
+
+             <label for="degree">Degree</label>
+             <select name="degree" id="degree">
+               <option value="selctgroup">--Select Group--</option>
+               <option value="btech">B.TECH</option>
+               <option value="mtech">M.TECH</option>
+               <option value="msc">M.Sc</option> </select>
+               <br>  </br>
+
+               <label for="Engineering">Engineering:</label>
+               <select name="cybersecurity" id="cys">
+                <option value="selctgroup">--Select Group--</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Computerscience">Computerscience</option>
+                <option value="Civil">Civil</option>
+                <option value="Mechanical">Mechanical</option>
+               </select>
+               <br><br>
+    
+               Hobbies:
+               <label for="9"> Playing chess</label>
+               <input type="checkbox" id="9" name="9" value="Playing chess">
+               
+               <label for="10"> Reading books  </label>
+               <input type="checkbox" id="10" name="10" value="Reading books">
+               <br> </br>
+    
+            <h2 style="text-align:center ;color: red;">   Address</h2>
+               <textarea name="Address" rows="10" cols="30">
+    
+               </textarea>
+               <br></br>
+               Attach resume
+               <input type="file" id="fn">
+               <br> </br>
+    
+               <input type ="submit" value="submit">
+                    <br>   </br>
+    
+               </fieldset>
+       
+             
+        </form>
+    </body>
+</html>

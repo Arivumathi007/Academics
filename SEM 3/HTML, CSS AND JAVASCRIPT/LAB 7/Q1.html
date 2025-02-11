@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Change Background Color</title>  
+    <style>  
+        #myElement {  
+            width: 200px;  
+            height: 200px;  
+            background-color: rgb(0, 157, 255);  
+            text-align: center;  
+            line-height: 200px;  
+            margin: 20px;  
+            border: 1px solid #000;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<div id="myElement"><p style="color:rgb(81, 0, 255);">Hover over me!</p></div>  
+
+<script>  
+    const element = document.getElementById('myElement');  
+
+    element.addEventListener('mouseenter', function() {  
+        element.style.backgroundColor = 'lightgreen'; // Change to desired color  
+    });  
+
+    element.addEventListener('mouseleave', function() {  
+        element.style.backgroundColor = 'rgb(0, 157, 255)'; // Change back to original color  
+    });  
+</script>  
+
+</body>  
+</html>

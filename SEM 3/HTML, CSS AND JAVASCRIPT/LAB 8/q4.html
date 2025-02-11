@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALLINDROME</title>
+    <script>
+        
+        function isPalindrome(str) {
+            const cleaned = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+            return cleaned === cleaned.split('').reverse().join('');
+        }
+
+        
+        function runExamples() {
+            
+            document.getElementById("palindrome-result").innerText = isPalindrome('A man a plan a canal Panama');
+            
+        }
+    </script>
+</head>
+<body onload="runExamples()">
+    
+    <h2>Palindrome Check ("A man a plan a canal Panama")</h2>
+    <h2><p id="palindrome-result"></p></h2>
+
+    
+</body>
+</html>

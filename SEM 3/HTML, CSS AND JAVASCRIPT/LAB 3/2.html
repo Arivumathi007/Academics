@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+            <style>
+                body{
+                    margin-left: 500px;
+                    text-align: center;
+                    
+                    display: inline-flex;
+                    padding: 50px;
+                    border-radius: 25px;
+                    
+                }
+                </style>
+            
+                <style>
+                    body{background-color: lightgray;}
+                    section{
+                        
+                        background-color:rgb(143, 179, 72);
+                        color: black;
+                        border:solid olivedrab;
+                        display:inline-block;
+                        border-radius: 10px;
+                        padding:15px;
+                      
+                
+                    }
+                    fieldset{
+                        border-color: white;
+                        background-color: #abc54d;
+                    }
+                    footer{
+                        text-align: center;
+                    }
+                </style>
+                <form>
+                <section>
+            <fieldset >
+
+
+            
+            <h2> Step 1 : Your details</h1>
+                <fieldset style="background-color :#abc54d">
+             Name:
+             <input type="text"  placeholder="Enter first and last name">
+            </fieldset>
+             
+             <fieldset>
+             Email:
+             <input type="email" placeholder="example@domain.com">
+            </fieldset>
+              
+              <fieldset>
+             phone:
+             <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"placeholder="+44750000">
+            </fieldset>
+             
+             <fieldset>
+             age:
+             <input type="number" min="18" max="100">
+            </fieldset>
+             
+             <fieldset>
+             Date of birth:
+             <input type="date">
+            </fieldset>
+             
+
+             </fieldset>
+              
+             <fieldset >
+
+
+            <h2> Step 2: Delivery address</h2>
+            
+            <fieldset>
+                <p style="text-align: left;"> Address</p>
+             <label for="address" name="Address"></label>
+             
+             <textarea name="Address" rows="10" cols="30">
+
+             </textarea>
+            </fieldset>
+             
+             <fieldset>
+             Post code:
+             <input type="text" min="7">
+             
+            </fieldset>
+            <fieldset>
+             <label for="country">Country :</label>
+             <input list="countries" id="country" name="country">
+             <datalist id="countries">
+                 <option value="India">
+                 <option value="Russia">
+                 <option value="Germany">
+                 <option value="United Kingdom">
+                 <option value="United States">
+                 <option value="Canada">
+                 <option value="Australia">
+                 <option value="New Zealand">
+                 <option value="Switzerland">
+                 <option value="Argentina">
+                 <option value="Portugal">
+                 </datalist>
+            
+        </fieldset>
+             </fieldset>
+             <fieldset>
+            <h2>  Step 3: Card details</h2>
+             <br> </br>
+             <fieldset>
+            <p style="text-align: left;"> Card type </p>
+            <br> </br>
+            VISA
+            <label>
+                <input type="radio" name="VISA" value="VISA">
+                <img src="visa.png" alt="VISA 1" width="50" height="50">
+            </label>
+            AmEx
+
+            <label>
+                <input type="radio" name="AmEx" value="AmEx">
+                <img src ="AmEx.jpg" alt="AmEx" widht="50" height="50">
+            </label>
+            <label>
+                <input type="radio" name="Master card" value="Master card">
+                <img src="Mastercard.png" alt="Master card" width="50" height="50">
+            </label>
+        </fieldset>
+            
+            <fieldset>
+            Card number
+          
+            <input type="text">
+        </fieldset>
+            
+            <fieldset>
+            Security Code
+            <input type="password">
+        </fieldset>
+            
+            <fieldset>
+            Name on Card
+            <input type="text" placeholder="Exact name as on card">
+        </fieldset>
+             <br> </br>
+             <footer>
+             <input type="submit" value="Buy IT!"style="background-color: rgb(66, 97, 3);color: white;width: 150px;height: 25px;border-radius: 10px;">
+            </footer>
+            </fieldset >
+        </section>
+
+
+
+        </form>
+    </body>
+</html>

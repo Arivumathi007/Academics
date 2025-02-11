@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration form</title>
+    <style>
+       body{
+            
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 50px;
+            background-color: lightgrey;
+        }
+        form{
+            border:2px solid black;
+            padding:25px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            
+            var userId = document.forms["registrationForm"]["userId"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var name = document.forms["registrationForm"]["name"].value;
+            var country = document.forms["registrationForm"]["country"].value;
+            var zipCode = document.forms["registrationForm"]["zip"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var sex = document.forms["registrationForm"]["sex"].value;
+            var language = document.forms["registrationForm"]["language"];
+
+           
+            var namePattern = /^[A-Za-z]+$/;
+            var zipPattern = /^[0-9]+$/;
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            
+            if (userId.length < 5 || userId.length > 12) {
+                alert("User ID must be between 5 and 12 characters.");
+                return false;
+            }
+
+            
+            if (password.length < 7 || password.length > 12) {
+                alert("Password must be between 7 and 12 characters.");
+                return false;
+            }
+
+            
+            if (!namePattern.test(name)) {
+                alert("Name must contain only alphabets.");
+                return false;
+            }
+
+           
+            if (country === "") {
+                alert("Please select a country.");
+                return false;
+            }
+
+            
+            if (!zipPattern.test(zipCode)) {
+                alert("ZIP Code must be numeric.");
+                return false;
+            }
+
+            
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            
+            if (sex === "") {
+                alert("Please select your sex.");
+                return false;
+            }
+
+            
+            var checkedLanguages = 0;
+            for (var i = 0; i < language.length; i++) {
+                if (language[i].checked) {
+                    checkedLanguages++;
+                }
+            }
+            if (checkedLanguages === 0) {
+                alert("Please select at least one language.");
+                return false;
+            }
+
+            
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="registrationForm" onsubmit="return validateForm()">
+        <label>User id:</label>
+        <input type="text" name="userId">
+        <br>
+    </br>
+        
+        <label>Password:</label>
+        <input type="password" name="password">
+        <br>
+    </br>
+
+        <label>Name:</label>
+        <input type="text" name="name">
+        <br>
+    </br>
+
+        <label>Country:</label>
+        <select name="country">
+            <option value="">select</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+        </select>
+        <br>
+    </br>
+        <label>ZIP Code:</label>
+        <input type="text" name="zip">
+        <br>
+    </br>
+        <label>Email:</label>
+        <input type="text" name="email">
+        <br>
+        <br>
+        <label>Sex:</label>
+        <input type="radio" name="sex" value="Male">Male
+        <input type="radio" name="sex" value="Female">Female
+        <br>
+        <br>
+        <label>Language:</label>
+        <input type="checkbox" name="language" value="English">English
+        <input type="checkbox" name="language" value="NonEnglish">Non English
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

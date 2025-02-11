@@ -1,0 +1,85 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Currency Converter</title>  
+    <link rel="stylesheet" href="styles.css">  
+    <style>
+    body {  
+        font-family: Arial, sans-serif;  
+        background-color: #f8f8f8;  
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        height: 100vh;  
+        margin: 0;  
+    }  
+    
+    .container {  
+        background-color: #e63946;  
+        padding: 20px;  
+        border-radius: 10px;  
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+        text-align: center;  
+        color: white;  
+    }  
+    
+    input, select, button {  
+        margin: 10px 0;  
+        padding: 10px;  
+        border-radius: 5px;  
+        border: none;  
+    }  
+    
+    button {  
+        background-color: #f1faee;  
+        color: #e63946;  
+        cursor: pointer;  
+    }  
+    
+    button:hover {  
+        background-color: #a8dadc;  
+    }
+</style>
+</head>  
+<body>  
+    <div class="container">  
+        <h1>Currency Converter</h1>  
+        <input type="number" id="amount" placeholder="Convert" />  
+        <select id="fromCurrency">  
+            <option value="INR">Indian Rupee</option>  
+            <option value="USD">US Dollar</option>  
+            <option value="EUR">Euro</option>  
+        </select>  
+        <select id="toCurrency">  
+            <option value="INR">Indian Rupee</option>  
+            <option value="USD">US Dollar</option>  
+            <option value="EUR">Euro</option>  
+        </select>  
+        <button id="convertBtn">Convert</button>  
+        <h2 id="result"></h2>  
+    </div>  
+    <script>
+    const conversionRates = {  
+        INR: { USD: 0.012, EUR: 0.011 },  
+        USD: { INR: 83.33, EUR: 0.92 },  
+        EUR: { INR: 90.91, USD: 1.09 }  
+    };  
+    
+    document.getElementById('convertBtn').addEventListener('click', function() {  
+        const amount = parseFloat(document.getElementById('amount').value);  
+        const fromCurrency = document.getElementById('fromCurrency').value;  
+        const toCurrency = document.getElementById('toCurrency').value;  
+    
+        if (!isNaN(amount)) {  
+            const convertedAmount = amount * conversionRates[fromCurrency][toCurrency];  
+            document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;  
+        } else {  
+            document.getElementById('result').innerText = 'Please enter a valid amount.';  
+        }  
+    });
+</script>
+    <script src="script.js"></script>  
+</body>  
+</html>

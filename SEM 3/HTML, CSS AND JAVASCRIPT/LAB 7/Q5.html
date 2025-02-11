@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+</head>
+<body>
+
+    <h2>Select a color to change the background:</h2>
+
+    <!-- Dropdown menu for selecting colors -->
+    <select id="colorDropdown">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="purple">Purple</option>
+    </select>
+
+    <script>
+        // Get the dropdown element
+        const colorDropdown = document.getElementById('colorDropdown');
+
+        // Add an event listener to detect when the user selects a new color
+        colorDropdown.addEventListener('change', function() {
+            // Get the selected color value
+            const selectedColor = colorDropdown.value;
+
+            // Change the background color of the body
+            document.body.style.backgroundColor = selectedColor;
+        });
+    </script>
+
+</body>
+</html>

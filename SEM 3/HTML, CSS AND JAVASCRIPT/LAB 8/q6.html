@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEAP_YEAR</title>
+    <script>
+        
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        // Example usage
+        function runExamples() {
+            
+            document.getElementById("leapyear-result").innerText = isLeapYear(2024);
+        }
+    </script>
+</head>
+<body onload="runExamples()">
+    
+    <h2>Leap Year Check (2024)</h2>
+    <h2><p id="leapyear-result"></p></h2>
+
+</body>
+</html>
